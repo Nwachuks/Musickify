@@ -31,6 +31,7 @@
 		B029CE2B26A4B03E00334515 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CE2A26A4B03E00334515 /* AudioTrack.swift */; };
 		B029CE3026A4B04F00334515 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CE2F26A4B04F00334515 /* Artist.swift */; };
 		B029CE3526A4B05C00334515 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CE3426A4B05C00334515 /* UserProfile.swift */; };
+		B0A4651426A5F79E00BFAE6E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4651326A5F79E00BFAE6E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		B029CE2A26A4B03E00334515 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		B029CE2F26A4B04F00334515 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		B029CE3426A4B05C00334515 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		B0A4651326A5F79E00BFAE6E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				B029CDA726A4A8FD00334515 /* Assets.xcassets */,
 				B029CD9E26A4A8FB00334515 /* AppDelegate.swift */,
 				B029CDA026A4A8FB00334515 /* SceneDelegate.swift */,
+				B0A4651326A5F79E00BFAE6E /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				B029CDEF26A4AEA800334515 /* LibraryVC.swift in Sources */,
 				B029CD9F26A4A8FB00334515 /* AppDelegate.swift in Sources */,
 				B029CE3526A4B05C00334515 /* UserProfile.swift in Sources */,
+				B0A4651426A5F79E00BFAE6E /* Extensions.swift in Sources */,
 				B029CDDF26A4AE4800334515 /* TabBarVC.swift in Sources */,
 				B029CE3026A4B04F00334515 /* Artist.swift in Sources */,
 				B029CDA126A4A8FB00334515 /* SceneDelegate.swift in Sources */,
