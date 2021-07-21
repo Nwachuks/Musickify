@@ -29,9 +29,7 @@ class LoginVC: UIViewController, WKNavigationDelegate {
         webView.navigationDelegate = self
         view.addSubview(webView)
         
-        guard let url = AuthManager.instance.signInURL else {
-            return
-        }
+        guard let url = AuthManager.instance.signInURL else { return }
         webView.load(URLRequest(url: url))
     }
     
@@ -41,17 +39,20 @@ class LoginVC: UIViewController, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        guard let url = webView.url else {
-            return
-        }
+        guard let url = webView.url else { return }
         
         // Exchange the code for access token
         let component = URLComponents(string: url.absoluteString)
-        guard let code = component?.queryItems?.first(where: { $0.name == "code" })?.value else {
-            return
-        }
+        guard let code = component?.queryItems?.first(where: { $0.name == "code" })?.value else { return }
+        webView.isHidden = true
         
         print("Code: \(code)")
+        AuthManager.instance.exchangeCodeForToken(code: code) { [weak self] success in
+            DispatchQueue.main.async {
+                self?.navigationController?.popToRootViewController(animated: true)
+                self?.completionHandler?(success)
+            }
+        }
     }
 
 }

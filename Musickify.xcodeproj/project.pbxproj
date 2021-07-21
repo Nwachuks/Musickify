@@ -32,6 +32,7 @@
 		B029CE3026A4B04F00334515 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CE2F26A4B04F00334515 /* Artist.swift */; };
 		B029CE3526A4B05C00334515 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CE3426A4B05C00334515 /* UserProfile.swift */; };
 		B0A4651426A5F79E00BFAE6E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4651326A5F79E00BFAE6E /* Extensions.swift */; };
+		B0A4651926A7C4FD00BFAE6E /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4651826A7C4FD00BFAE6E /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		B029CE2F26A4B04F00334515 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		B029CE3426A4B05C00334515 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		B0A4651326A5F79E00BFAE6E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B0A4651826A7C4FD00BFAE6E /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				B029CE2A26A4B03E00334515 /* AudioTrack.swift */,
 				B029CE2F26A4B04F00334515 /* Artist.swift */,
 				B029CE3426A4B05C00334515 /* UserProfile.swift */,
+				B0A4651826A7C4FD00BFAE6E /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				B029CDEA26A4AE9000334515 /* SearchVC.swift in Sources */,
 				B029CDF426A4AEB600334515 /* LoginVC.swift in Sources */,
 				B029CE2126A4AFDA00334515 /* HapticsManager.swift in Sources */,
+				B0A4651926A7C4FD00BFAE6E /* AuthResponse.swift in Sources */,
 				B029CE2B26A4B03E00334515 /* AudioTrack.swift in Sources */,
 				B029CE1226A4AF3400334515 /* SearchResultsVC.swift in Sources */,
 				B029CDEF26A4AEA800334515 /* LibraryVC.swift in Sources */,
