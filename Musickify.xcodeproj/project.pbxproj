@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58609CF38ABDB9E5C88A37BC /* Pods_Musickify_MusickifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE77A95DF6D6330C61BF4161 /* Pods_Musickify_MusickifyUITests.framework */; };
 		B029CD9F26A4A8FB00334515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CD9E26A4A8FB00334515 /* AppDelegate.swift */; };
 		B029CDA126A4A8FB00334515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CDA026A4A8FB00334515 /* SceneDelegate.swift */; };
 		B029CDA326A4A8FB00334515 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CDA226A4A8FB00334515 /* HomeVC.swift */; };
@@ -33,6 +34,9 @@
 		B029CE3526A4B05C00334515 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CE3426A4B05C00334515 /* UserProfile.swift */; };
 		B0A4651426A5F79E00BFAE6E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4651326A5F79E00BFAE6E /* Extensions.swift */; };
 		B0A4651926A7C4FD00BFAE6E /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4651826A7C4FD00BFAE6E /* AuthResponse.swift */; };
+		B0D7337926A82BDF00E19503 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D7337826A82BDF00E19503 /* Settings.swift */; };
+		BE604168ADDD9090A5A71ECB /* Pods_MusickifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9034E2F8EB4F5A1C4A5511D4 /* Pods_MusickifyTests.framework */; };
+		EB26D2F6C515CCBAFF389869 /* Pods_Musickify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8153C528707620E29D2CB871 /* Pods_Musickify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		225312972E37B1CACBBC9C9A /* Pods-Musickify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musickify.debug.xcconfig"; path = "Target Support Files/Pods-Musickify/Pods-Musickify.debug.xcconfig"; sourceTree = "<group>"; };
+		3A1E4089FDF1BA5D48B3810E /* Pods-MusickifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusickifyTests.release.xcconfig"; path = "Target Support Files/Pods-MusickifyTests/Pods-MusickifyTests.release.xcconfig"; sourceTree = "<group>"; };
+		744D78D74179DD0C45055322 /* Pods-Musickify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musickify.release.xcconfig"; path = "Target Support Files/Pods-Musickify/Pods-Musickify.release.xcconfig"; sourceTree = "<group>"; };
+		8153C528707620E29D2CB871 /* Pods_Musickify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musickify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9034E2F8EB4F5A1C4A5511D4 /* Pods_MusickifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusickifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FF5F287A3182AA0B3CC8984 /* Pods-MusickifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusickifyTests.debug.xcconfig"; path = "Target Support Files/Pods-MusickifyTests/Pods-MusickifyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B029CD9B26A4A8FB00334515 /* Musickify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musickify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B029CD9E26A4A8FB00334515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B029CDA026A4A8FB00334515 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +95,10 @@
 		B029CE3426A4B05C00334515 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		B0A4651326A5F79E00BFAE6E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B0A4651826A7C4FD00BFAE6E /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		B0D7337826A82BDF00E19503 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D0E01D163EF2C343D24F3A11 /* Pods-Musickify-MusickifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musickify-MusickifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Musickify-MusickifyUITests/Pods-Musickify-MusickifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE77A95DF6D6330C61BF4161 /* Pods_Musickify_MusickifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musickify_MusickifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F75C5DC5D546C63CA365C142 /* Pods-Musickify-MusickifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musickify-MusickifyUITests.release.xcconfig"; path = "Target Support Files/Pods-Musickify-MusickifyUITests/Pods-Musickify-MusickifyUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB26D2F6C515CCBAFF389869 /* Pods_Musickify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE604168ADDD9090A5A71ECB /* Pods_MusickifyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +122,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58609CF38ABDB9E5C88A37BC /* Pods_Musickify_MusickifyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E64F64D4A5623D2D731B9A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8153C528707620E29D2CB871 /* Pods_Musickify.framework */,
+				DE77A95DF6D6330C61BF4161 /* Pods_Musickify_MusickifyUITests.framework */,
+				9034E2F8EB4F5A1C4A5511D4 /* Pods_MusickifyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B029CD9226A4A8FB00334515 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +146,8 @@
 				B029CDB426A4A8FD00334515 /* MusickifyTests */,
 				B029CDBF26A4A8FD00334515 /* MusickifyUITests */,
 				B029CD9C26A4A8FB00334515 /* Products */,
+				E0D8DC21D89CD8BEA9DD47DC /* Pods */,
+				1E64F64D4A5623D2D731B9A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +201,7 @@
 				B029CE2F26A4B04F00334515 /* Artist.swift */,
 				B029CE3426A4B05C00334515 /* UserProfile.swift */,
 				B0A4651826A7C4FD00BFAE6E /* AuthResponse.swift */,
+				B0D7337826A82BDF00E19503 /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,6 +260,20 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E0D8DC21D89CD8BEA9DD47DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				225312972E37B1CACBBC9C9A /* Pods-Musickify.debug.xcconfig */,
+				744D78D74179DD0C45055322 /* Pods-Musickify.release.xcconfig */,
+				D0E01D163EF2C343D24F3A11 /* Pods-Musickify-MusickifyUITests.debug.xcconfig */,
+				F75C5DC5D546C63CA365C142 /* Pods-Musickify-MusickifyUITests.release.xcconfig */,
+				9FF5F287A3182AA0B3CC8984 /* Pods-MusickifyTests.debug.xcconfig */,
+				3A1E4089FDF1BA5D48B3810E /* Pods-MusickifyTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,9 +281,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B029CDC526A4A8FE00334515 /* Build configuration list for PBXNativeTarget "Musickify" */;
 			buildPhases = (
+				9AFA800FF99BA73D8271407C /* [CP] Check Pods Manifest.lock */,
 				B029CD9726A4A8FB00334515 /* Sources */,
 				B029CD9826A4A8FB00334515 /* Frameworks */,
 				B029CD9926A4A8FB00334515 /* Resources */,
+				A602C4A2885A404040750BD1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +300,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B029CDC826A4A8FE00334515 /* Build configuration list for PBXNativeTarget "MusickifyTests" */;
 			buildPhases = (
+				FA75A696052816785600BE97 /* [CP] Check Pods Manifest.lock */,
 				B029CDAD26A4A8FD00334515 /* Sources */,
 				B029CDAE26A4A8FD00334515 /* Frameworks */,
 				B029CDAF26A4A8FD00334515 /* Resources */,
@@ -272,9 +319,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B029CDCB26A4A8FE00334515 /* Build configuration list for PBXNativeTarget "MusickifyUITests" */;
 			buildPhases = (
+				D2B017AE6361C46F934DFFE7 /* [CP] Check Pods Manifest.lock */,
 				B029CDB826A4A8FD00334515 /* Sources */,
 				B029CDB926A4A8FD00334515 /* Frameworks */,
 				B029CDBA26A4A8FD00334515 /* Resources */,
+				E2189EA32B6C48AC72766740 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,6 +403,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9AFA800FF99BA73D8271407C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Musickify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A602C4A2885A404040750BD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musickify/Pods-Musickify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musickify/Pods-Musickify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Musickify/Pods-Musickify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2B017AE6361C46F934DFFE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Musickify-MusickifyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2189EA32B6C48AC72766740 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musickify-MusickifyUITests/Pods-Musickify-MusickifyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Musickify-MusickifyUITests/Pods-Musickify-MusickifyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Musickify-MusickifyUITests/Pods-Musickify-MusickifyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA75A696052816785600BE97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusickifyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B029CD9726A4A8FB00334515 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -367,6 +519,7 @@
 				B029CDEA26A4AE9000334515 /* SearchVC.swift in Sources */,
 				B029CDF426A4AEB600334515 /* LoginVC.swift in Sources */,
 				B029CE2126A4AFDA00334515 /* HapticsManager.swift in Sources */,
+				B0D7337926A82BDF00E19503 /* Settings.swift in Sources */,
 				B0A4651926A7C4FD00BFAE6E /* AuthResponse.swift in Sources */,
 				B029CE2B26A4B03E00334515 /* AudioTrack.swift in Sources */,
 				B029CE1226A4AF3400334515 /* SearchResultsVC.swift in Sources */,
@@ -545,6 +698,7 @@
 		};
 		B029CDC626A4A8FE00334515 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 225312972E37B1CACBBC9C9A /* Pods-Musickify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -564,6 +718,7 @@
 		};
 		B029CDC726A4A8FE00334515 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 744D78D74179DD0C45055322 /* Pods-Musickify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -583,6 +738,7 @@
 		};
 		B029CDC926A4A8FE00334515 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FF5F287A3182AA0B3CC8984 /* Pods-MusickifyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -605,6 +761,7 @@
 		};
 		B029CDCA26A4A8FE00334515 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A1E4089FDF1BA5D48B3810E /* Pods-MusickifyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -627,6 +784,7 @@
 		};
 		B029CDCC26A4A8FE00334515 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0E01D163EF2C343D24F3A11 /* Pods-Musickify-MusickifyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -647,6 +805,7 @@
 		};
 		B029CDCD26A4A8FE00334515 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F75C5DC5D546C63CA365C142 /* Pods-Musickify-MusickifyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
