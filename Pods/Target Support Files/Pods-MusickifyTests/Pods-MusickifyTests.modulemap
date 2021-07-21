@@ -1,0 +1,6 @@
+framework module Pods_MusickifyTests {
+  umbrella header "Pods-MusickifyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
