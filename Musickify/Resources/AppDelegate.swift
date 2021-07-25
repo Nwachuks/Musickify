@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         if AuthManager.instance.isSignedIn {
+            // Refresh if needed
+            AuthManager.instance.refreshAccessToken(completion: nil)
             window.rootViewController = TabBarVC()
         } else {
             let navVC = UINavigationController(rootViewController: WelcomeVC())
