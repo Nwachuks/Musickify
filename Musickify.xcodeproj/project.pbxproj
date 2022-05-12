@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		58609CF38ABDB9E5C88A37BC /* Pods_Musickify_MusickifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE77A95DF6D6330C61BF4161 /* Pods_Musickify_MusickifyUITests.framework */; };
+		B0261A5326C05E9D004EEF5A /* NewReleasesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0261A5226C05E9D004EEF5A /* NewReleasesCellViewModel.swift */; };
 		B029CD9F26A4A8FB00334515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CD9E26A4A8FB00334515 /* AppDelegate.swift */; };
 		B029CDA126A4A8FB00334515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CDA026A4A8FB00334515 /* SceneDelegate.swift */; };
 		B029CDA326A4A8FB00334515 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B029CDA226A4A8FB00334515 /* HomeVC.swift */; };
@@ -71,6 +72,7 @@
 		8153C528707620E29D2CB871 /* Pods_Musickify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musickify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9034E2F8EB4F5A1C4A5511D4 /* Pods_MusickifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusickifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF5F287A3182AA0B3CC8984 /* Pods-MusickifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusickifyTests.debug.xcconfig"; path = "Target Support Files/Pods-MusickifyTests/Pods-MusickifyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0261A5226C05E9D004EEF5A /* NewReleasesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCellViewModel.swift; sourceTree = "<group>"; };
 		B029CD9B26A4A8FB00334515 /* Musickify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musickify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B029CD9E26A4A8FB00334515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B029CDA026A4A8FB00334515 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		B029CDD226A4AB7C00334515 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B0261A5226C05E9D004EEF5A /* NewReleasesCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				B029CE0326A4AEE900334515 /* ProfileVC.swift in Sources */,
 				B029CE2626A4B03100334515 /* Playlist.swift in Sources */,
 				B043829226AF38EC00A2F809 /* NewReleases.swift in Sources */,
+				B0261A5326C05E9D004EEF5A /* NewReleasesCellViewModel.swift in Sources */,
 				B029CE1726A4AFA900334515 /* AuthManager.swift in Sources */,
 				B04382B926AF438600A2F809 /* Recommendations.swift in Sources */,
 				B043829726AF39AD00A2F809 /* APIImage.swift in Sources */,
