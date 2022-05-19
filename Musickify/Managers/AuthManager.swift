@@ -151,6 +151,7 @@ final class AuthManager {
             return
         }
         
+        // Get refresh token
         guard let refreshToken = self.refreshToken else { return }
         
         // Refresh Token
