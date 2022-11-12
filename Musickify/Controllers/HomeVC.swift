@@ -52,7 +52,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func configureCollectionView() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.register(NewReleaseCVC.self, forCellWithReuseIdentifier: NewReleaseCVC.identifier)
         collectionView.register(FeaturedPlaylistCVC.self, forCellWithReuseIdentifier: FeaturedPlaylistCVC.identifier)
         collectionView.register(RecommendedTrackCVC.self, forCellWithReuseIdentifier: RecommendedTrackCVC.identifier)
@@ -102,22 +102,21 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             switch result {
             case .success(let data):
                 let genres = data.genres
-                var seeds = Set<String>()
-                while seeds.count < 5 {
-                    if let random = genres.randomElement() {
-                        seeds.insert(random)
-                    }
+                var seededGenres = Set<String>()
+                while seededGenres.count < 5 {
+                    guard let random = genres.randomElement() else { return }
+                    seededGenres.insert(random)
+                }
                     
-                    NetworkManager.instance.getRecommendations(genres: seeds) { recommendedResult in
-                        defer {
-                            group.leave()
-                        }
-                        switch recommendedResult {
-                        case .success(let model):
-                            recommendations = model
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                        }
+                NetworkManager.instance.getRecommendations(genres: seededGenres) { recommendedResult in
+                    defer {
+                        group.leave()
+                    }
+                    switch recommendedResult {
+                    case .success(let model):
+                        recommendations = model
+                    case .failure(let error):
+                        print(error.localizedDescription)
                     }
                 }
             case .failure(let error):
@@ -134,11 +133,15 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     private func configureModels(newAlbums: [Album], playlists: [Playlist], tracks: [AudioTrack]) {
         // Configure Models
+//        print(newAlbums.count)
+//        print(playlists.count)
+//        print(tracks.count)
         sections.append(.newReleases(viewModels: newAlbums.compactMap({
             return NewReleasesCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), numberOfTracks: $0.totalTracks, artistName: $0.artists.first?.name ?? "")
         })))
         sections.append(.featuredPlaylists(viewModels: []))
         sections.append(.recommendedTracks(viewModels: []))
+        collectionView.reloadData()
     }
     
     // MARK: CollectionView Methods
@@ -163,16 +166,18 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         switch type {
         case .newReleases(viewModels: let viewModels):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewReleaseCVC.identifier, for: indexPath) as? NewReleaseCVC else { return UICollectionViewCell() }
-            
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
+            return cell
         case .featuredPlaylists(viewModels: let viewModels):
-            break
-//            return viewModels.count
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedPlaylistCVC.identifier, for: indexPath) as? FeaturedPlaylistCVC else { return UICollectionViewCell() }
+            cell.backgroundColor = .blue
+            return cell
         case .recommendedTracks(viewModels: let viewModels):
-            break
-//            return viewModels.count
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCVC.identifier, for: indexPath) as? RecommendedTrackCVC else { return UICollectionViewCell() }
+            cell.backgroundColor = .orange
+            return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        return cell
     }
     
     static func createLayoutSection(section: Int) -> NSCollectionLayoutSection {

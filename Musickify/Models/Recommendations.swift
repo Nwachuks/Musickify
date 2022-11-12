@@ -10,3 +10,7 @@ import Foundation
 struct Recommendations: Codable {
     let tracks: [AudioTrack]
 }
+
+struct RecommendedGenres: Codable {
+    let genres: [String]
+}

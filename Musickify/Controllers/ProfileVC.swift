@@ -58,9 +58,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableInfo.append("User ID: \(data.id)")
         tableInfo.append("Plan: \(data.product.capitalized)")
         if data.images.count > 0 {
-            if let image = data.images.first {
-                showUserImage(from: image?.url)
-            }
+            guard let image = data.images.first else { return }
+            showUserImage(from: image?.url)
         }
         tableView.reloadData()
     }

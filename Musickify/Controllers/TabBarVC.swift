@@ -29,6 +29,7 @@ class TabBarVC: UITabBarController {
         let libraryNav = UINavigationController(rootViewController: libraryVC)
         
         // Set tint color to contrast light/dark mode
+        tabBar.tintColor = .label
         homeNav.navigationBar.tintColor = .label
         searchNav.navigationBar.tintColor = .label
         libraryNav.navigationBar.tintColor = .label

@@ -29,4 +29,3 @@ struct UserProfile: Codable {
         case images
     }
 }
-
