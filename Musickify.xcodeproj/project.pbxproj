@@ -44,6 +44,8 @@
 		B0A4651926A7C4FD00BFAE6E /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4651826A7C4FD00BFAE6E /* AuthResponse.swift */; };
 		B0C6C9F02920085900DFDF9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C6C9EF2920085900DFDF9D /* User.swift */; };
 		B0C6C9F22920111A00DFDF9D /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C6C9F12920111A00DFDF9D /* Album.swift */; };
+		B0C6C9F42921221400DFDF9D /* FeaturePlaylistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C6C9F32921221400DFDF9D /* FeaturePlaylistCellViewModel.swift */; };
+		B0C6C9F62921224B00DFDF9D /* RecommendedTrackCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C6C9F52921224B00DFDF9D /* RecommendedTrackCellViewModel.swift */; };
 		B0D7337926A82BDF00E19503 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D7337826A82BDF00E19503 /* Settings.swift */; };
 		BE604168ADDD9090A5A71ECB /* Pods_MusickifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9034E2F8EB4F5A1C4A5511D4 /* Pods_MusickifyTests.framework */; };
 		EB26D2F6C515CCBAFF389869 /* Pods_Musickify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8153C528707620E29D2CB871 /* Pods_Musickify.framework */; };
@@ -115,6 +117,8 @@
 		B0A4651826A7C4FD00BFAE6E /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		B0C6C9EF2920085900DFDF9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B0C6C9F12920111A00DFDF9D /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		B0C6C9F32921221400DFDF9D /* FeaturePlaylistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturePlaylistCellViewModel.swift; sourceTree = "<group>"; };
+		B0C6C9F52921224B00DFDF9D /* RecommendedTrackCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTrackCellViewModel.swift; sourceTree = "<group>"; };
 		B0D7337826A82BDF00E19503 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D0E01D163EF2C343D24F3A11 /* Pods-Musickify-MusickifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musickify-MusickifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Musickify-MusickifyUITests/Pods-Musickify-MusickifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE77A95DF6D6330C61BF4161 /* Pods_Musickify_MusickifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musickify_MusickifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				B0261A5226C05E9D004EEF5A /* NewReleasesCellViewModel.swift */,
+				B0C6C9F32921221400DFDF9D /* FeaturePlaylistCellViewModel.swift */,
+				B0C6C9F52921224B00DFDF9D /* RecommendedTrackCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 				B029CE2626A4B03100334515 /* Playlist.swift in Sources */,
 				B043829226AF38EC00A2F809 /* NewReleases.swift in Sources */,
 				B0261A5326C05E9D004EEF5A /* NewReleasesCellViewModel.swift in Sources */,
+				B0C6C9F62921224B00DFDF9D /* RecommendedTrackCellViewModel.swift in Sources */,
 				B029CE1726A4AFA900334515 /* AuthManager.swift in Sources */,
 				B04382B926AF438600A2F809 /* Recommendations.swift in Sources */,
 				B043829726AF39AD00A2F809 /* APIImage.swift in Sources */,
@@ -581,6 +588,7 @@
 				B029CDFE26A4AEDC00334515 /* SettingsVC.swift in Sources */,
 				B029CE0826A4AEF700334515 /* PlayerVC.swift in Sources */,
 				B0C6C9F02920085900DFDF9D /* User.swift in Sources */,
+				B0C6C9F42921221400DFDF9D /* FeaturePlaylistCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

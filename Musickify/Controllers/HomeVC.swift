@@ -8,9 +8,9 @@
 import UIKit
 
 enum BrowseSectionType {
-    case newReleases(viewModels: [NewReleasesCellViewModel]) // 1
-    case featuredPlaylists(viewModels: [NewReleasesCellViewModel]) // 2
-    case recommendedTracks(viewModels: [NewReleasesCellViewModel]) // 3
+    case newReleases(viewModels: [NewReleasesCellViewModel])
+    case featuredPlaylists(viewModels: [FeaturePlaylistCellViewModel])
+    case recommendedTracks(viewModels: [RecommendedTrackCellViewModel])
 }
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -52,7 +52,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func configureCollectionView() {
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.register(NewReleaseCVC.self, forCellWithReuseIdentifier: NewReleaseCVC.identifier)
         collectionView.register(FeaturedPlaylistCVC.self, forCellWithReuseIdentifier: FeaturedPlaylistCVC.identifier)
         collectionView.register(RecommendedTrackCVC.self, forCellWithReuseIdentifier: RecommendedTrackCVC.identifier)
@@ -136,11 +135,19 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 //        print(newAlbums.count)
 //        print(playlists.count)
 //        print(tracks.count)
+        
         sections.append(.newReleases(viewModels: newAlbums.compactMap({
-            return NewReleasesCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), numberOfTracks: $0.totalTracks, artistName: $0.artists.first?.name ?? "")
+            return NewReleasesCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), numberOfTracks: $0.totalTracks, artistName: $0.artists.first?.name ?? "-")
         })))
-        sections.append(.featuredPlaylists(viewModels: []))
-        sections.append(.recommendedTracks(viewModels: []))
+        
+        sections.append(.featuredPlaylists(viewModels: playlists.compactMap({
+            return FeaturePlaylistCellViewModel(name: $0.name, artworkURL: URL(string: $0.images.first?.url ?? ""), creatorName: $0.owner.displayName)
+        })))
+        
+        sections.append(.recommendedTracks(viewModels: tracks.compactMap({
+            return RecommendedTrackCellViewModel(name: $0.name, artworkURL: URL(string: $0.album.images.first?.url ?? ""), artistName: $0.artists.first?.name ?? "-")
+        })))
+        
         collectionView.reloadData()
     }
     
@@ -171,11 +178,13 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             return cell
         case .featuredPlaylists(viewModels: let viewModels):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedPlaylistCVC.identifier, for: indexPath) as? FeaturedPlaylistCVC else { return UICollectionViewCell() }
-            cell.backgroundColor = .blue
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
             return cell
         case .recommendedTracks(viewModels: let viewModels):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCVC.identifier, for: indexPath) as? RecommendedTrackCVC else { return UICollectionViewCell() }
-            cell.backgroundColor = .orange
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
             return cell
         }
     }
@@ -241,8 +250,8 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             
             let horizontalGroup = NSCollectionLayoutGroup.horizontal(
                 layoutSize: NSCollectionLayoutSize(
-                    widthDimension: .absolute(200),
-                    heightDimension: .absolute(400)
+                    widthDimension: .absolute(180),
+                    heightDimension: .absolute(360)
                 ),
                 subitem: verticalGroup,
                 count: 1

@@ -14,6 +14,8 @@ class NewReleaseCVC: UICollectionViewCell {
     private let albumCoverImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "photo")
+        imageView.layer.cornerRadius = 4
+        imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -61,12 +63,9 @@ class NewReleaseCVC: UICollectionViewCell {
         numberOfTracksLabel.sizeToFit()
         
         albumCoverImageView.frame = CGRect(x: 5, y: 5, width: imageSize, height: imageSize)
-        albumCoverImageView.layer.cornerRadius = 4
-        albumCoverImageView.layer.masksToBounds = false
-        albumCoverImageView.clipsToBounds = true
         
-        let albumLabelHeight = min(60, albumNameLabelSize.height)
-        albumNameLabel.frame = CGRect(x: albumCoverImageView.right + 10, y: 5, width: albumNameLabelSize.width, height: albumLabelHeight)
+        let albumNameLabelHeight = min(60, albumNameLabelSize.height)
+        albumNameLabel.frame = CGRect(x: albumCoverImageView.right + 10, y: 5, width: albumNameLabelSize.width, height: albumNameLabelHeight)
         
         artistNameLabel.frame = CGRect(x: albumCoverImageView.right + 10, y: albumNameLabel.bottom, width: contentView.width - albumCoverImageView.right - 10, height: 30)
         numberOfTracksLabel.frame = CGRect(x: albumCoverImageView.right + 10, y: contentView.bottom - 32, width: contentView.width - albumCoverImageView.right - 10, height: 24)
