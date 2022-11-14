@@ -37,6 +37,7 @@ final class NetworkManager {
         }
     }
     
+    // MARK: Profile
     public func getCurrentUserProfile(completion: @escaping (Result<UserProfile, Error>) -> Void) {
         createRequest(url: URL(string: Constants.baseAPIURL + "/me"), type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
@@ -58,6 +59,7 @@ final class NetworkManager {
         }
     }
     
+    // MARK: Albums
     public func getNewReleases(completion: @escaping (Result<NewReleases, Error>) -> Void) {
         createRequest(url: URL(string: Constants.baseAPIURL + "/browse/new-releases?limit=50"), type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
@@ -78,6 +80,27 @@ final class NetworkManager {
         }
     }
     
+    public func getAlbumDetails(using albumId: String, completion: @escaping (Result<AlbumDetails, Error>) -> Void) {
+        createRequest(url: URL(string: Constants.baseAPIURL + "/albums/\(albumId)"), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(AlbumDetails.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    print(error)
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+     
+    // MARK: Playlists
     public func getFeaturedPlaylists(completion: @escaping (Result<FeaturedPlaylists, Error>) -> Void) {
         createRequest(url: URL(string: Constants.baseAPIURL + "/browse/featured-playlists?limit=50"), type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
@@ -98,6 +121,27 @@ final class NetworkManager {
         }
     }
     
+    public func getPlaylistDetails(using playlistId: String, completion: @escaping (Result<PlaylistDetails, Error>) -> Void) {
+        createRequest(url: URL(string: Constants.baseAPIURL + "/playlists/\(playlistId)"), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(PlaylistDetails.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    print(error)
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    // MARK: Recommendations
     public func getRecommendations(genres: Set<String>, completion: @escaping (Result<Recommendations, Error>) -> Void) {
         let seeds = genres.joined(separator: ",")
         createRequest(url: URL(string: Constants.baseAPIURL + "/recommendations?seed_genres=\(seeds)&limit=30"), type: .GET) { request in

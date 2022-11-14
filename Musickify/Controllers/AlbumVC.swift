@@ -1,24 +1,24 @@
 //
-//  PlaylistVC.swift
+//  AlbumVC.swift
 //  Musickify
 //
-//  Created by Nwachukwu Ejiofor on 18/07/2021.
+//  Created by Nwachukwu Ejiofor on 14/11/2022.
 //
 
 import UIKit
 
-class PlaylistVC: UIViewController {
+class AlbumVC: UIViewController {
     
-    var playlist: Playlist?
+    var album: Album?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
-        guard let playlist = playlist else { return }
-        title = playlist.name
+        guard let album = album else { return }
+        title = album.name
         
-        NetworkManager.instance.getPlaylistDetails(using: playlist.id) { result in
+        NetworkManager.instance.getAlbumDetails(using: album.id) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let details):
