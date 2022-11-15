@@ -45,6 +45,8 @@
 		B0C6C9F42921221400DFDF9D /* FeaturePlaylistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C6C9F32921221400DFDF9D /* FeaturePlaylistCellViewModel.swift */; };
 		B0C6C9F62921224B00DFDF9D /* RecommendedTrackCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C6C9F52921224B00DFDF9D /* RecommendedTrackCellViewModel.swift */; };
 		B0D4FE7E29228631001F636F /* AlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D4FE7D29228631001F636F /* AlbumVC.swift */; };
+		B0D4FE8229231889001F636F /* PlaylistHeaderCRV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D4FE8129231889001F636F /* PlaylistHeaderCRV.swift */; };
+		B0D4FE8429231BF4001F636F /* PlaylistHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D4FE8329231BF4001F636F /* PlaylistHeaderViewModel.swift */; };
 		B0D7337926A82BDF00E19503 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D7337826A82BDF00E19503 /* Settings.swift */; };
 		BE604168ADDD9090A5A71ECB /* Pods_MusickifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9034E2F8EB4F5A1C4A5511D4 /* Pods_MusickifyTests.framework */; };
 		EB26D2F6C515CCBAFF389869 /* Pods_Musickify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8153C528707620E29D2CB871 /* Pods_Musickify.framework */; };
@@ -117,6 +119,8 @@
 		B0C6C9F32921221400DFDF9D /* FeaturePlaylistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturePlaylistCellViewModel.swift; sourceTree = "<group>"; };
 		B0C6C9F52921224B00DFDF9D /* RecommendedTrackCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTrackCellViewModel.swift; sourceTree = "<group>"; };
 		B0D4FE7D29228631001F636F /* AlbumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumVC.swift; sourceTree = "<group>"; };
+		B0D4FE8129231889001F636F /* PlaylistHeaderCRV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderCRV.swift; sourceTree = "<group>"; };
+		B0D4FE8329231BF4001F636F /* PlaylistHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderViewModel.swift; sourceTree = "<group>"; };
 		B0D7337826A82BDF00E19503 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D0E01D163EF2C343D24F3A11 /* Pods-Musickify-MusickifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musickify-MusickifyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Musickify-MusickifyUITests/Pods-Musickify-MusickifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE77A95DF6D6330C61BF4161 /* Pods_Musickify_MusickifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musickify_MusickifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +242,7 @@
 				B0261A5226C05E9D004EEF5A /* NewReleasesCellViewModel.swift */,
 				B0C6C9F32921221400DFDF9D /* FeaturePlaylistCellViewModel.swift */,
 				B0C6C9F52921224B00DFDF9D /* RecommendedTrackCellViewModel.swift */,
+				B0D4FE8329231BF4001F636F /* PlaylistHeaderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			children = (
 				B04382BD26AFD2FA00A2F809 /* Browse */,
 				B029CDA926A4A8FD00334515 /* LaunchScreen.storyboard */,
+				B0D4FE8129231889001F636F /* PlaylistHeaderCRV.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -576,7 +582,9 @@
 				B029CE3526A4B05C00334515 /* UserProfile.swift in Sources */,
 				B0A4651426A5F79E00BFAE6E /* Extensions.swift in Sources */,
 				B029CDDF26A4AE4800334515 /* TabBarVC.swift in Sources */,
+				B0D4FE8229231889001F636F /* PlaylistHeaderCRV.swift in Sources */,
 				B04382CF26AFD37D00A2F809 /* RecommendedTrackCVC.swift in Sources */,
+				B0D4FE8429231BF4001F636F /* PlaylistHeaderViewModel.swift in Sources */,
 				B029CE3026A4B04F00334515 /* Artist.swift in Sources */,
 				B029CDA126A4A8FB00334515 /* SceneDelegate.swift in Sources */,
 				B029CDF926A4AECE00334515 /* WelcomeVC.swift in Sources */,
