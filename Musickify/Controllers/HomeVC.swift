@@ -11,6 +11,17 @@ enum BrowseSectionType {
     case newReleases(viewModels: [NewReleasesCellViewModel])
     case featuredPlaylists(viewModels: [FeaturePlaylistCellViewModel])
     case recommendedTracks(viewModels: [RecommendedTrackCellViewModel])
+    
+    var title: String {
+        switch self {
+        case .newReleases:
+            return "Newly Released Albums"
+        case .featuredPlaylists:
+            return "Featured Playlists"
+        case .recommendedTracks:
+            return "Recommended"
+        }
+    }
 }
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -59,6 +70,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         collectionView.register(NewReleaseCVC.self, forCellWithReuseIdentifier: NewReleaseCVC.identifier)
         collectionView.register(FeaturedPlaylistCVC.self, forCellWithReuseIdentifier: FeaturedPlaylistCVC.identifier)
         collectionView.register(RecommendedTrackCVC.self, forCellWithReuseIdentifier: RecommendedTrackCVC.identifier)
+        collectionView.register(TitleHeaderCRV.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TitleHeaderCRV.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .systemBackground
@@ -136,10 +148,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     private func configureModels(newAlbums: [Album], playlists: [Playlist], tracks: [AudioTrack]) {
         // Configure Models
-//        print(newAlbums.count)
-//        print(playlists.count)
-//        print(tracks.count)
-        
         self.newAlbums = newAlbums
         self.playlists = playlists
         self.tracks = tracks
@@ -219,7 +227,18 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionHeader, let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleHeaderCRV.identifier, for: indexPath) as? TitleHeaderCRV else { return UICollectionReusableView() }
+        let title = sections[indexPath.section].title
+        header.configure(using: title)
+        return header
+    }
+    
     static func createLayoutSection(section: Int) -> NSCollectionLayoutSection {
+        let supplementaryViews = [
+            NSCollectionLayoutBoundarySupplementaryItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50)), elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        ]
+        
         switch section {
         case 0:
             // New Releases
@@ -254,6 +273,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             // Section
             let section = NSCollectionLayoutSection(group: horizontalGroup)
             section.orthogonalScrollingBehavior = .groupPaging
+            section.boundarySupplementaryItems = supplementaryViews
             return section
         case 1:
             // Featured Playlists
@@ -290,6 +310,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             // Section
             let section = NSCollectionLayoutSection(group: horizontalGroup)
             section.orthogonalScrollingBehavior = .continuous
+            section.boundarySupplementaryItems = supplementaryViews
             return section
         case 2:
             // Recommendations
@@ -314,6 +335,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             
             // Section
             let section = NSCollectionLayoutSection(group: group)
+            section.boundarySupplementaryItems = supplementaryViews
             return section
         default:
             // Item
@@ -336,6 +358,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             
             // Section
             let section = NSCollectionLayoutSection(group: group)
+            section.boundarySupplementaryItems = supplementaryViews
             return section
         }
         
