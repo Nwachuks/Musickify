@@ -1,14 +1,15 @@
 //
-//  GenreCVC.swift
+//  CategoryCVC.swift
 //  Musickify
 //
 //  Created by Nwachukwu Ejiofor on 16/11/2022.
 //
 
 import UIKit
+import SDWebImage
 
-class GenreCVC: UICollectionViewCell {
-    static let identifier = "GenreCVC"
+class CategoryCVC: UICollectionViewCell {
+    static let identifier = "CategoryCVC"
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -22,6 +23,7 @@ class GenreCVC: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .white
         label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -53,16 +55,18 @@ class GenreCVC: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         genreNameLabel.text = nil
+        imageView.image = UIImage(systemName: "music.quarternote.3", withConfiguration: UIImage.SymbolConfiguration(pointSize: 50, weight: .regular))
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         genreNameLabel.frame = CGRect(x: 10, y: contentView.height/2, width: contentView.width - 20, height: contentView.height/2)
-        imageView.frame = CGRect(x: contentView.width/2, y: 0, width: contentView.width/2, height: contentView.height/2)
+        imageView.frame = CGRect(x: contentView.width/2 + 10, y: 10, width: contentView.width/2 - 10, height: contentView.height/2 - 10)
     }
     
-    func configure(using title: String) {
-        genreNameLabel.text = title
+    func configure(using viewModel: CategoryViewModel) {
+        genreNameLabel.text = viewModel.title
+        imageView.sd_setImage(with: viewModel.artworkURL, completed: nil)
         contentView.backgroundColor = colors.randomElement()
     }
 }

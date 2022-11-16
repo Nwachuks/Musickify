@@ -26,6 +26,8 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UICollectionViewDeleg
         
         return NSCollectionLayoutSection(group: group)
     }))
+    
+    private var categories = [Category]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +39,22 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UICollectionViewDeleg
         navigationItem.searchController = searchController
         
         view.addSubview(collectionView)
-        collectionView.register(GenreCVC.self, forCellWithReuseIdentifier: GenreCVC.identifier)
+        collectionView.register(CategoryCVC.self, forCellWithReuseIdentifier: CategoryCVC.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .systemBackground
+        
+        NetworkManager.instance.getCategories { [weak self] results in
+            DispatchQueue.main.async {
+                switch results {
+                case .success(let categories):
+                    self?.categories = categories
+                    self?.collectionView.reloadData()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,12 +75,22 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCVC.identifier, for: indexPath) as? GenreCVC else { return UICollectionViewCell() }
-        cell.configure(using: "Rock")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCVC.identifier, for: indexPath) as? CategoryCVC else { return UICollectionViewCell() }
+        let category = categories[indexPath.row]
+        cell.configure(using: CategoryViewModel(title: category.name, artworkURL: URL(string: category.icons.first?.url ?? "")))
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let category = categories[indexPath.row]
+        let vc = CategoryVC()
+        vc.category = category
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
