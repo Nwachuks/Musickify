@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchVC: UIViewController, UISearchResultsUpdating, UICollectionViewDelegate, UICollectionViewDataSource {
+class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     
     let searchController: UISearchController = {
         let searchVC = UISearchController(searchResultsController: SearchResultsVC())
@@ -35,7 +35,7 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UICollectionViewDeleg
         title = "Search"
         view.backgroundColor = .systemBackground
         
-        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         
         view.addSubview(collectionView)
@@ -62,11 +62,43 @@ class SearchVC: UIViewController, UISearchResultsUpdating, UICollectionViewDeleg
         collectionView.frame = view.bounds
     }
     
-    // MARK: Search Controller Results Delegate method
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let resultsVC = searchController.searchResultsController as? SearchResultsVC,  let query = searchController.searchBar.text, !query.trimmingCharacters(in: .whitespaces).isEmpty else { return }
-        print(query)
+    // MARK: Search Bar Delegate methods
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let resultsVC = searchController.searchResultsController as? SearchResultsVC,  let query = searchBar.text, !query.trimmingCharacters(in: .whitespaces).isEmpty else { return }
         
+        resultsVC.resultTapped = { [weak self] result in
+            self?.showResults(using: result)
+        }
+        
+        NetworkManager.instance.search(with: query) { response in
+            DispatchQueue.main.async {
+                switch response {
+                case .success(let results):
+                    resultsVC.update(with: results)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func showResults(using result: SearchResult) {
+        switch result {
+        case .album(let model):
+            let vc = AlbumVC()
+            vc.album = model
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        case .artist(let model):
+            break
+        case .track(let model):
+            break
+        case .playlist(let model):
+            let vc = PlaylistVC()
+            vc.playlist = model
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     // MARK: CollectionView Delegate methods

@@ -152,9 +152,6 @@ final class NetworkManager {
                 
                 do {
                     let result = try JSONDecoder().decode(AllCategories.self, from: data)
-//                    JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-//                    print(result.categories.items)
-//
                     completion(.success(result.categories.items))
                 } catch {
                     print(error)
@@ -221,6 +218,34 @@ final class NetworkManager {
                     completion(.success(result))
                 } catch {
                     print(error)
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    // MARK: Search
+    public func search(with query: String, completion: @escaping (Result<[SearchResult], Error>) -> Void) {
+        createRequest(url: URL(string: Constants.baseAPIURL + "/search?limit=10&type=album,artist,track,playlist&q=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(SearchResults.self, from: data)
+                    
+                    var searchResults: [SearchResult] = []
+                    searchResults.append(contentsOf: result.albums.items.compactMap({ SearchResult.album(result: $0) }))
+                    searchResults.append(contentsOf: result.artists.items.compactMap({ .artist(result: $0) }))
+                    searchResults.append(contentsOf: result.tracks.items.compactMap({ .track(result: $0) }))
+                    searchResults.append(contentsOf: result.playlists.items.compactMap({ .playlist(result: $0) }))
+                    
+                    completion(.success(searchResults))
+                } catch {
+                    print(error.localizedDescription)
                     completion(.failure(error))
                 }
             }
