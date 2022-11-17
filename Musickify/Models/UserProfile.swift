@@ -13,7 +13,6 @@ struct UserProfile: Codable {
     let email: String
     let explicitContent: [String: Bool]
     let externalURLS: [String: String]
-//    let followers: [String: Codable?]
     let id: String
     let product: String
     let images: [APIImage?]

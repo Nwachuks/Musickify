@@ -19,7 +19,7 @@ struct SearchAlbum: Codable {
 }
 
 struct SearchArtist: Codable {
-    let items: [Artist]
+    let items: [ArtistDetail]
 }
 
 struct SearchTrack: Codable {
@@ -37,7 +37,7 @@ struct SearchSection {
 
 enum SearchResult {
     case album(result: Album)
-    case artist(result: Artist)
+    case artist(result: ArtistDetail)
     case track(result: AudioTrack)
     case playlist(result: Playlist)
 }

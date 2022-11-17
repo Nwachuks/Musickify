@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     
@@ -90,7 +91,9 @@ class SearchVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
             vc.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(vc, animated: true)
         case .artist(let model):
-            break
+            guard let artistUrl = URL(string: model.externalURLs["spotify"] ?? "") else { return }
+            let vc = SFSafariViewController(url: artistUrl)
+            navigationController?.present(vc, animated: true)
         case .track(let model):
             break
         case .playlist(let model):
